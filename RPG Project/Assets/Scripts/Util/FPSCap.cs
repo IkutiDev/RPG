@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class FPSCap : MonoBehaviour
+namespace RPG.Util
 {
-    private void Awake()
+    public class FPSCap : MonoBehaviour
     {
-        Application.targetFrameRate = 120;
+        private void Awake()
+        {
+            Application.targetFrameRate = 120;
+        }
     }
 }
