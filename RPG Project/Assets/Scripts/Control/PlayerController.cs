@@ -54,7 +54,7 @@ namespace RPG.Control
             {
                 if (movementHeld)
                 {
-                    mover.MoveTo(hit.point);
+                    mover.StartMoveAction(hit.point);
                 }
                 return true;
             }
