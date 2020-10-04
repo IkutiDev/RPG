@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 877741907236373584}
   - component: {fileID: 4603156005129710247}
   - component: {fileID: 29055271}
+  - component: {fileID: 4148245783144945030}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -96,8 +97,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 877741907236373584}
-        m_TargetAssemblyTypeName: Mover, Assembly-CSharp
+      - m_Target: {fileID: 4148245783144945030}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: MovementInput
         m_Mode: 0
         m_Arguments:
@@ -174,6 +175,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4148245783144945030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069999442959288784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 896ba1c0a41e71d4f9beecc87805361f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1449982638954228471
 PrefabInstance:
   m_ObjectHideFlags: 0

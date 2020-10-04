@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Mover : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
     private Animator animator;
-    private bool holdingMouseButtonForMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +18,6 @@ public class Mover : MonoBehaviour
     }
     private void Update()
     {
-        if (holdingMouseButtonForMovement)
-        {
-            MoveToCursor();
-        }
         UpdateAnimator();
     }
 
@@ -34,25 +29,10 @@ public class Mover : MonoBehaviour
         animator.SetFloat("forwardSpeed",speed);
     }
 
-    public void MovementInput(InputAction.CallbackContext context)
+
+
+    public void MoveTo(Vector3 destination)
     {
-        if (context.performed)
-        {
-            holdingMouseButtonForMovement = true;
-        }
-        if (context.canceled)
-        {
-            holdingMouseButtonForMovement = false;
-        }
-    }
-    private void MoveToCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(ray, out hit);
-        if (hasHit)
-        {
-            navMeshAgent.destination = hit.point;
-        }
+        navMeshAgent.destination = destination;
     }
 }
