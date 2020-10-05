@@ -193,7 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715611b588bc44a4f86b34e78381b5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRange: 5
+  weaponRange: 2
+  timeBetweenAttacks: 2
 --- !u!114 &803271345478619208
 MonoBehaviour:
   m_ObjectHideFlags: 0
