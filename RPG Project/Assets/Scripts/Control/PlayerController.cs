@@ -5,7 +5,6 @@ using RPG.Combat;
 
 namespace RPG.Control
 {
-    [RequireComponent(typeof(Mover))][RequireComponent(typeof(Fighter))]
     public class PlayerController : MonoBehaviour
     {
         private bool movementHeld;
@@ -33,7 +32,7 @@ namespace RPG.Control
             foreach(var hit in hits)
             {
                 var target = hit.transform.GetComponent<CombatTarget>();
-                if (target == null) { continue; }
+                if(!fighter.CanAttack(target)) { continue; }
                 if (Mouse.current.rightButton.wasPressedThisFrame)
                 {
                     fighter.Attack(target);
