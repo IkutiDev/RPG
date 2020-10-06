@@ -1,12 +1,12 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
-namespace RPG.Combat
+﻿using UnityEngine;
+namespace RPG.Core
 {
     public class Health : MonoBehaviour
     {
         [SerializeField] private float healthPoints = 100f;
         private bool isDead=false;
         private Animator animator;
+        private ActionScheduler actionScheduler;
         public bool IsDead()
         {
             return isDead;
@@ -14,6 +14,7 @@ namespace RPG.Combat
         private void Start()
         {
             animator = GetComponent<Animator>();
+            actionScheduler = GetComponent<ActionScheduler>();
         }
         public void TakeDamage(float damage)
         {
@@ -28,6 +29,7 @@ namespace RPG.Combat
         {
             isDead = true;
             animator.SetTrigger("death");
+            actionScheduler.CancelCurrentAction();
         }
     }
 }

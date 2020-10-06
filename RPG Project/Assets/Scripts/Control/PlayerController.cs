@@ -2,6 +2,7 @@
 using UnityEngine.InputSystem;
 using RPG.Movement;
 using RPG.Combat;
+using RPG.Core;
 
 namespace RPG.Control
 {
@@ -11,16 +12,19 @@ namespace RPG.Control
         private bool attackPressed;
         private Mover mover;
         private Fighter fighter;
+        private Health health;
         // Start is called before the first frame update
         void Start()
         {
             mover = GetComponent<Mover>();
             fighter = GetComponent<Fighter>();
+            health = GetComponent<Health>();
         }
 
         // Update is called once per frame
         void Update()
         {
+            if(health.IsDead()) { return; }
             if (InteractWithCombat()) { return; }
             if(InteractWithMovement()) { return; }
             Debug.Log("Nothing to do");
@@ -32,10 +36,11 @@ namespace RPG.Control
             foreach(var hit in hits)
             {
                 var target = hit.transform.GetComponent<CombatTarget>();
-                if(!fighter.CanAttack(target)) { continue; }
+                if (target == null) continue;
+                if(!fighter.CanAttack(target.gameObject)) { continue; }
                 if (Mouse.current.rightButton.wasPressedThisFrame)
                 {
-                    fighter.Attack(target);
+                    fighter.Attack(target.gameObject);
                 }
                 return true;
             }
@@ -67,13 +72,6 @@ namespace RPG.Control
                 movementHeld = false;
             }
         }
-        //public void AttackInput(InputAction.CallbackContext context)
-        //{
-        //    if (context.performed)
-        //    {
-        //        attackPressed = true;
-        //    }
-        //}
 
         private static Ray GetMouseRay()
         {
