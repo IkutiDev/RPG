@@ -36,7 +36,6 @@ namespace RPG.Movement
         }
         public void StartMoveAction(Vector3 destination) 
         {
-            //fighter.Cancel();
             MoveTo(destination);
             actionScheduler.StartAction(this);
         }
