@@ -1,6 +1,7 @@
 ﻿using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
+using System;
 using UnityEditor;
 using UnityEngine;
 namespace RPG.Control
@@ -9,6 +10,9 @@ namespace RPG.Control
     {
         [SerializeField] private float chaseDistance = 5f;
         [SerializeField] private float suspicionTime = 5f;
+        [SerializeField] private PatrolPath patrolPath;
+        [SerializeField] private float waypointTolerance = 1f;
+        [SerializeField] private float waypointDwellTime = 2.5f;
         private GameObject player;
         private Fighter fighter;
         private Health health;
@@ -16,7 +20,9 @@ namespace RPG.Control
         private ActionScheduler actionScheduler;
 
         private Vector3 guardPosition;
+        private int currentWaypointIndex;
         private float timeSinceLastSawPlayer = Mathf.Infinity;
+        private float timeSinceArrivedAtWaypoint = Mathf.Infinity;
         private void Start()
         {
             fighter = GetComponent<Fighter>();
@@ -31,27 +37,63 @@ namespace RPG.Control
             if (health.IsDead()) return;
             if (InAttackRange() && fighter.CanAttack(player))
             {
-                timeSinceLastSawPlayer = 0f;
                 AttackBehaviour();
             }
-            else if (timeSinceLastSawPlayer<suspicionTime)
+            else if (timeSinceLastSawPlayer < suspicionTime)
             {
                 SuspictionBehaviour();
             }
             else
             {
-                GuardBehaviour();
+                PatrolBehaviour();
             }
+            UpdateTimers();
+        }
+
+        private void UpdateTimers()
+        {
+            timeSinceArrivedAtWaypoint += Time.deltaTime;
             timeSinceLastSawPlayer += Time.deltaTime;
         }
 
-        private void GuardBehaviour()
+        private void PatrolBehaviour()
         {
-            mover.StartMoveAction(guardPosition);
+            Vector3 nextPosition = guardPosition;
+            if(patrolPath != null)
+            {
+                if (AtWaypoint())
+                {
+                    timeSinceArrivedAtWaypoint = 0f;
+                    CycleWaypoint();
+                }
+                nextPosition = GetCurrentWaypoint();
+            }
+            if (timeSinceArrivedAtWaypoint>waypointDwellTime)
+            {
+                mover.StartMoveAction(nextPosition);
+            }
+            
+        }
+
+        private Vector3 GetCurrentWaypoint()
+        {
+            return patrolPath.GetWaypoint(currentWaypointIndex);
+        }
+
+        private void CycleWaypoint()
+        {
+            currentWaypointIndex = patrolPath.GetNextIndex(currentWaypointIndex);
+        }
+
+        private bool AtWaypoint()
+        {
+            float distanceToWaypoint = Vector3.Distance(transform.position, GetCurrentWaypoint());
+            return distanceToWaypoint < waypointTolerance;
         }
 
         private void AttackBehaviour()
         {
+            timeSinceLastSawPlayer = 0f;
             fighter.Attack(player);
         }
 
