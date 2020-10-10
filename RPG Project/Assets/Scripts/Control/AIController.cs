@@ -134,13 +134,5 @@ namespace RPG.Control
             Handles.color = Color.red;
             Handles.DrawWireDisc(transform.position, Vector3.down, chaseDistance);
         }
-        private void OnDrawGizmosSelected()
-        {
-            if (patrolPath != null)
-            {
-                if (Selection.activeGameObject == gameObject) patrolPath.patrolPathSelected = true;
-                //else patrolPath.patrolPathSelected = false;
-            }
-        }
     }
 }
