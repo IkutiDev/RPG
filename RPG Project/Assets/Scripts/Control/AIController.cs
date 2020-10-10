@@ -1,6 +1,7 @@
 ﻿using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
+using Sirenix.OdinInspector;
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -12,7 +13,16 @@ namespace RPG.Control
         [SerializeField] private float suspicionTime = 5f;
         [SerializeField] private PatrolPath patrolPath;
         [SerializeField] private float waypointTolerance = 1f;
+        #region DwellTime
+        [SerializeField] private bool randomDwellTime;
+        [HideIf("randomDwellTime")]
         [SerializeField] private float waypointDwellTime = 2.5f;
+        [ShowIf("randomDwellTime")]
+        [SerializeField] private float minRandomWaypointDwellTime = 1f;
+        [ShowIf("randomDwellTime")]
+        [SerializeField] private float maxRandomWaypointDwellTime = 5f;
+        private float currentDwellTime;
+        #endregion
         private GameObject player;
         private Fighter fighter;
         private Health health;
@@ -31,6 +41,7 @@ namespace RPG.Control
             mover = GetComponent<Mover>();
             actionScheduler = GetComponent<ActionScheduler>();
             guardPosition = transform.position;
+            currentDwellTime = SetWaypointDwellTime();
         }
         private void Update()
         {
@@ -63,18 +74,29 @@ namespace RPG.Control
             {
                 if (AtWaypoint())
                 {
+                    currentDwellTime = SetWaypointDwellTime();
                     timeSinceArrivedAtWaypoint = 0f;
                     CycleWaypoint();
                 }
                 nextPosition = GetCurrentWaypoint();
             }
-            if (timeSinceArrivedAtWaypoint>waypointDwellTime)
+            if (timeSinceArrivedAtWaypoint>currentDwellTime)
             {
                 mover.StartMoveAction(nextPosition);
             }
             
         }
-
+        private float SetWaypointDwellTime()
+        {
+            if (randomDwellTime)
+            {
+                return UnityEngine.Random.Range(minRandomWaypointDwellTime, maxRandomWaypointDwellTime);
+            }
+            else
+            {
+                return waypointDwellTime;
+            }
+        }
         private Vector3 GetCurrentWaypoint()
         {
             return patrolPath.GetWaypoint(currentWaypointIndex);
