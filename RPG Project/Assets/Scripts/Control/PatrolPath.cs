@@ -8,7 +8,9 @@ namespace RPG.Control
         [SerializeField] private float sizeOfWaypointGizmos=5f;
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.white;
+            if (UnityEditor.Selection.activeGameObject == gameObject) Gizmos.color = Color.white;
+            else Gizmos.color = Color.grey;
+            
             for (int i=0;i<transform.childCount;i++)
             {
                 int j = GetNextIndex(i);
