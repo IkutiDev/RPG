@@ -101,13 +101,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1588801405757176992, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
+      propertyPath: weaponDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588801405757176992, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2237498364279074717, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: health
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2237498364279074717, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: healthPoints
-      value: 20
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2267709090948161103, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_Speed
@@ -181,5 +189,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13729058, guid: 996b1cdc214c6ad43b2b0a8dc6ab12ed, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c48e6085fe7e7f42be493f6ba01c6f3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 996b1cdc214c6ad43b2b0a8dc6ab12ed, type: 3}

@@ -161,6 +161,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1588801405757176992, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
+      propertyPath: weaponDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2237498364279074717, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
+      propertyPath: healthPoints
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
 --- !u!1 &4589587401218721556 stripped
@@ -228,5 +236,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13749572, guid: 156f67e924f48da4990472c91c068932, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d21dd5a8b5afa745bbd680f6e13697e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156f67e924f48da4990472c91c068932, type: 3}
