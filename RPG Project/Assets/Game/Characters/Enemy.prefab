@@ -30,6 +30,7 @@ MonoBehaviour:
   suspicionTime: 5
   patrolPath: {fileID: 0}
   waypointTolerance: 1
+  patrolSpeedFraction: 0.5
   randomDwellTime: 0
   waypointDwellTime: 2.5
   minRandomWaypointDwellTime: 1

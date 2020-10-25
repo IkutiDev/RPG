@@ -27,7 +27,8 @@ namespace RPG.Combat
             if (target.IsDead()) return;
             if (!GetIsInRange())
             {
-                mover.MoveTo(target.transform.position);
+                //full speed fraction as 2nd argument
+                mover.MoveTo(target.transform.position,1f);
             }
             else
             {

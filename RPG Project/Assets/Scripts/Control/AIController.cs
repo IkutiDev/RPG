@@ -13,6 +13,7 @@ namespace RPG.Control
         [SerializeField] private float suspicionTime = 5f;
         [SerializeField] private PatrolPath patrolPath;
         [SerializeField] private float waypointTolerance = 1f;
+        [Range(0f,1f)][SerializeField] private float patrolSpeedFraction = 0.2f;
         #region DwellTime
         [SerializeField] private bool randomDwellTime;
         [HideIf("randomDwellTime")]
@@ -82,7 +83,7 @@ namespace RPG.Control
             }
             if (timeSinceArrivedAtWaypoint>currentDwellTime)
             {
-                mover.StartMoveAction(nextPosition);
+                mover.StartMoveAction(nextPosition,patrolSpeedFraction);
             }
             
         }

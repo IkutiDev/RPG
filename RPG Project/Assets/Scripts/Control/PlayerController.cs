@@ -55,7 +55,8 @@ namespace RPG.Control
             {
                 if (movementHeld)
                 {
-                    mover.StartMoveAction(hit.point);
+                    //full speed fraction as 2nd argument
+                    mover.StartMoveAction(hit.point,1f);
                 }
                 return true;
             }
