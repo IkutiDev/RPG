@@ -102,6 +102,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!136 &841806414
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4589587401218721556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1001 &3560126015679516356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,27 +133,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069999442959288788, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 11.95
       objectReference: {fileID: 0}
     - target: {fileID: 1069999442959288788, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 1069999442959288788, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 46.41
       objectReference: {fileID: 0}
     - target: {fileID: 1069999442959288788, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1069999442959288788, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1069999442959288788, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1069999442959288788, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -168,6 +182,10 @@ PrefabInstance:
     - target: {fileID: 2237498364279074717, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: healthPoints
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2267709090948161103, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
+      propertyPath: m_Speed
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
