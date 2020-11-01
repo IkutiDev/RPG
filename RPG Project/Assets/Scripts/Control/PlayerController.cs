@@ -27,7 +27,7 @@ namespace RPG.Control
             if(health.IsDead()) { return; }
             if (InteractWithCombat()) { return; }
             if(InteractWithMovement()) { return; }
-            Debug.Log("Nothing to do");
+            //Debug.Log("Nothing to do");
         }
 
         private bool InteractWithCombat()
