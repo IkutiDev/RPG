@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Bandit Camp.unity
+    guid: 0756efbaf625c0a49bc7bff0bf3d6189
+  - enabled: 1
+    path: Assets/Scenes/Transition.unity
+    guid: c59f4013645f6bf4eb92bbd64b1995c4
   m_configObjects: {}
