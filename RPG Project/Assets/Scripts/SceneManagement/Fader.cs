@@ -8,9 +8,8 @@ namespace RPG.SceneManagement
         private void Start()
         {
             canvasGroup = GetComponent<CanvasGroup>();
-            StartCoroutine(FadeOutIn(3f));
         }
-        IEnumerator FadeOut(float time)
+        public IEnumerator FadeOut(float time)
         {
             while (canvasGroup.alpha<1f) // alpa is not 1
             {
@@ -19,14 +18,7 @@ namespace RPG.SceneManagement
                 yield return null;
             }
         }
-        IEnumerator FadeOutIn(float time)
-        {
-            yield return FadeOut(time);
-            Debug.Log("Fade out");
-            yield return FadeIn(time);
-            Debug.Log("Fade in");
-        }
-        IEnumerator FadeIn(float time)
+        public IEnumerator FadeIn(float time)
         {
             while (canvasGroup.alpha > 0f) // alpa is not 1
             {
