@@ -41,6 +41,7 @@ namespace RPG.Core
         public void RestoreState(object state)
         {
             healthPoints = (float)state;
+            animator.Rebind();
             if (healthPoints == 0f)
             {
                 Die();
@@ -49,7 +50,6 @@ namespace RPG.Core
             {
                 if (isDead)
                 {
-                    animator.SetTrigger("revive");
                     isDead = false;
                 }
             }
