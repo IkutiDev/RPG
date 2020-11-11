@@ -12,11 +12,11 @@ namespace RPG.Core
         {
             return isDead;
         }
-        private void Start()
+        private void Awake()
         {
             animator = GetComponent<Animator>();
             actionScheduler = GetComponent<ActionScheduler>();
-        }
+        }                               
         public void TakeDamage(float damage)
         {
             if (isDead) return;

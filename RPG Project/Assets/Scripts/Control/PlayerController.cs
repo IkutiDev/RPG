@@ -14,7 +14,7 @@ namespace RPG.Control
         private Fighter fighter;
         private Health health;
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             mover = GetComponent<Mover>();
             fighter = GetComponent<Fighter>();

@@ -34,13 +34,16 @@ namespace RPG.Control
         private int currentWaypointIndex;
         private float timeSinceLastSawPlayer = Mathf.Infinity;
         private float timeSinceArrivedAtWaypoint = Mathf.Infinity;
-        private void Start()
+        private void Awake()
         {
-            fighter = GetComponent<Fighter>();
-            player = GameObject.FindGameObjectWithTag("Player");
             health = GetComponent<Health>();
             mover = GetComponent<Mover>();
+            fighter = GetComponent<Fighter>();
             actionScheduler = GetComponent<ActionScheduler>();
+        }
+        private void Start()
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
             guardPosition = transform.position;
             currentDwellTime = SetWaypointDwellTime();
         }

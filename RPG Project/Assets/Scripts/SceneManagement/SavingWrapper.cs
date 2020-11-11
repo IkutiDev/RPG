@@ -11,7 +11,7 @@ namespace RPG.SceneManagement
     {
         const string defaultSaveFile = "save";
         private SavingSystem savingSystem;
-        private void Start()
+        private void Awake()
         {
             savingSystem = GetComponent<SavingSystem>();
         }
@@ -27,12 +27,12 @@ namespace RPG.SceneManagement
             }
         }
 
-        private void Save()
+        public void Save()
         {
             savingSystem.Save(defaultSaveFile);
         }
 
-        private void Load()
+        public void Load()
         {
             savingSystem.Load(defaultSaveFile);
         }
