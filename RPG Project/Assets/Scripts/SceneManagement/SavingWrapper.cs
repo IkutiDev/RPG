@@ -25,17 +25,6 @@ namespace RPG.SceneManagement
             yield return savingSystem.LoadLastScene(defaultSaveFile);
             yield return fader.FadeIn(fadeInTime);
         }
-        private void Update()
-        {
-            if (Keyboard.current.lKey.wasPressedThisFrame)
-            {
-                Load();
-            }
-            if (Keyboard.current.sKey.wasPressedThisFrame)
-            {
-                Save();
-            }
-        }
 
         public void Save()
         {
