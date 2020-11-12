@@ -1,11 +1,10 @@
-﻿using RPG.Saving;
+﻿using RPG.SceneManagement;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-namespace RPG.SceneManagement
+namespace RPG.Saving
 {
     public class SavingWrapper : MonoBehaviour
     {
