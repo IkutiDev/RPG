@@ -70,7 +70,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5077133562809000892, guid: 7964ce80e841a3e4ab1f549f91bc7f18, type: 3}
       propertyPath: healthPoints
-      value: 8
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5725241222841413761, guid: 7964ce80e841a3e4ab1f549f91bc7f18, type: 3}
       propertyPath: weaponDamage

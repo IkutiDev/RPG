@@ -191,9 +191,13 @@ PrefabInstance:
       propertyPath: weaponOverride
       value: 
       objectReference: {fileID: 22100000, guid: 26ebbbb3e03e2714abd76793323c97f1, type: 2}
+    - target: {fileID: 1588801405757176992, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 377213b3e24e3d24fa9cbdaef18e8471, type: 2}
     - target: {fileID: 2237498364279074717, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: healthPoints
-      value: 15
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2267709090948161103, guid: ca045d3fef907a14b81ab9e42c6c462a, type: 3}
       propertyPath: m_Speed

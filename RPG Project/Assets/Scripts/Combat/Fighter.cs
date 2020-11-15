@@ -6,12 +6,12 @@ namespace RPG.Combat
     public class Fighter : MonoBehaviour, IAction
     {
         //should be in weapon config
-        [SerializeField] private float weaponRange = 2f;
+        
         [SerializeField] private float timeBetweenAttacks;
-        [SerializeField] private float weaponDamage=5f;
-        [SerializeField] private GameObject weaponPrefab = null;
+        
         [SerializeField] private Transform handTransform = null;
-        [SerializeField] private AnimatorOverrideController weaponOverride=null;
+        [SerializeField] private Weapon weapon = null;
+
         private Mover mover;
         private Health target;
         private ActionScheduler actionScheduler;
@@ -45,8 +45,8 @@ namespace RPG.Combat
         }
         private void SpawnWeapon()
         {
-            Instantiate(weaponPrefab, handTransform);
-            animator.runtimeAnimatorController = weaponOverride;
+            if (weapon == null) return;
+            weapon.Spawn(handTransform, animator);
         }
         private void AttackBehaviour()
         {
@@ -69,7 +69,8 @@ namespace RPG.Combat
         void Hit()
         {
             if (target == null) return;
-            target.TakeDamage(weaponDamage);
+            if (weapon == null) return;
+            target.TakeDamage(weapon.GetDamage());
         }
         public void Attack(GameObject combatTarget)
         {
@@ -97,7 +98,8 @@ namespace RPG.Combat
         }
         private bool GetIsInRange()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+            if (weapon == null) return false;
+            return Vector3.Distance(transform.position, target.transform.position) < weapon.GetRange();
         }
 
     }
