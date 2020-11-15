@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: timeBetweenAttacks
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5725241222841413761, guid: 7964ce80e841a3e4ab1f549f91bc7f18, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ec4784277f17e249b23ec662256ead6, type: 2}
     - target: {fileID: 6314552624978511345, guid: 7964ce80e841a3e4ab1f549f91bc7f18, type: 3}
       propertyPath: m_Name
       value: Mini Boss Variant
