@@ -69,6 +69,8 @@ namespace RPG.Movement
             transform.position = data.position.ToVector();
             transform.eulerAngles = data.rotation.ToVector();
             navMeshAgent.enabled = true;
+            //might want move this into action scheduler
+            actionScheduler.CancelCurrentAction();
         }
     }
 }

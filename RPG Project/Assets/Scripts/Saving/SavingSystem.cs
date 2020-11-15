@@ -53,7 +53,6 @@ namespace RPG.Saving
                 return (Dictionary<string, object>)formatter.Deserialize(stream);
             }
         }
-
         private void SaveFile(string saveFile, object state)
         {
             string path = GetPathFromSaveFile(saveFile);
