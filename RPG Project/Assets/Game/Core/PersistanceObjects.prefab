@@ -41,7 +41,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 508468663815485878, guid: 307af9c0caab24f44aea0ce3890e3ddb, type: 3}
       propertyPath: m_Name
-      value: SavingSystem
+      value: Saving
       objectReference: {fileID: 0}
     - target: {fileID: 804906965675551379, guid: 307af9c0caab24f44aea0ce3890e3ddb, type: 3}
       propertyPath: m_LocalPosition.x
