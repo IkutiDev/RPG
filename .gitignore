@@ -6,6 +6,10 @@
 Assets/Prototyping/
 Assets/AssetStoreTools*
 RPG Project/Assets/AssetPacks
+RPG Project/Assets/Plugins
+RPG Project/Assets/Ludiq
+RPG Project/Assets/Ludiq.Generated
+
 # Visual Studio cache directory
 .vs/
 
