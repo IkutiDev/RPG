@@ -76,6 +76,7 @@ namespace RPG.Control
 
         private static Ray GetMouseRay()
         {
+            //change from just mouse to possibly other ways to catch cursor
             return Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         }
     }
