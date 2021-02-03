@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour
 
     private Health target = null;
 
+    float damage = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -19,9 +21,10 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector3.forward*Time.deltaTime*projectileSpeed);
     }
 
-    public void SetTarget(Health target)
+    public void SetTarget(Health target, float damage)
     {
         this.target = target;
+        this.damage = damage;
     }
 
     private Vector3 GetAimLocation()
@@ -31,6 +34,12 @@ public class Projectile : MonoBehaviour
         {
             return target.transform.position;
         }
-        return target.transform.position + Vector3.up * targetCapsule.height/2;
+        return target.transform.position + Vector3.up * targetCapsule.height;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Health>() != target) return;
+        target.TakeDamage(damage);
+        Destroy(gameObject);
     }
 }
