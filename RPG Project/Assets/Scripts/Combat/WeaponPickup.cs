@@ -11,7 +11,14 @@ namespace RPG.Combat
         {
             if (other.tag == "Player")
             {
-                other.gameObject.GetComponent<Fighter>().EquipWeapon(weapon);
+                if (weapon != null)
+                {
+                    other.gameObject.GetComponent<Fighter>().EquipWeapon(weapon);
+                }
+                else
+                {
+                    Debug.LogError("Weapon asset is missing from this pickup", this);
+                }
                 Destroy(gameObject);
             }
         }
