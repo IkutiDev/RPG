@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8486aa3d5cf89134b92fa29157ca4a35, type: 3}
-  m_Name: EnemyBow
+  m_Name: HomingBow
   m_EditorClassIdentifier: 
   animatorOverride: {fileID: 22100000, guid: 27b64e62bafc2e04c99688107d8e5802, type: 2}
   equippedPrefab: {fileID: 8271804565445780597, guid: 96425e50d45f5e8448de9d85267307c7, type: 3}
