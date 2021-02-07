@@ -4919,6 +4919,10 @@ MonoBehaviour:
   projectileSpeed: 30
   isHoming: 1
   hitEffect: {fileID: 2302457091093092515, guid: 69d1b1037536b504884c93bb73d662db, type: 3}
+  maxLifeTime: 10
+  destroyOnCollision:
+  - {fileID: 7846099777179196788}
+  lifeAfterImpact: 2
 --- !u!135 &5873448695063607462
 SphereCollider:
   m_ObjectHideFlags: 0
