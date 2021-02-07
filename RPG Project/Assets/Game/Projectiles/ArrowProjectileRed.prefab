@@ -12,8 +12,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 3486442333182758462, guid: d132df0937af47844b8bc890d9538e6d, type: 3}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
       propertyPath: projectileSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffectColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffectColor.b
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffectColor.g
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffectColor.r
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 2874869526212099113, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
       propertyPath: m_Name

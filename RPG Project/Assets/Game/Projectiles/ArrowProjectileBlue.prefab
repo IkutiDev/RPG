@@ -7,6 +7,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 4738770369685435700, guid: 7a63b681493b31040a4fe0b1c99ccdd1, type: 3}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffectColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffectColor.b
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffectColor.g
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108653000503235907, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
+      propertyPath: hitEffectColor.r
+      value: 0.019607844
+      objectReference: {fileID: 0}
     - target: {fileID: 2874869526212099113, guid: 821327b28c3b9c34da5d9c734a247c61, type: 3}
       propertyPath: m_Name
       value: ArrowProjectileBlue

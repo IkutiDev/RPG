@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 20
+  isHoming: 0
+  hitEffect: {fileID: 1384676760634654, guid: 659df20d2f1db894abaae64a4de493f8, type: 3}
 --- !u!64 &2372416056050948342
 MeshCollider:
   m_ObjectHideFlags: 0
