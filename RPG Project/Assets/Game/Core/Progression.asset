@@ -12,3 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed7fb0b110047249bc80153b1f1a6ba, type: 3}
   m_Name: Progression
   m_EditorClassIdentifier: 
+  characterClasses:
+  - characterClass: 1
+    healthFormula:
+      startingValue: 200
+      percentageAdded: 0.5
+      absoluteAdded: 30
+  - characterClass: 2
+    healthFormula:
+      startingValue: 20
+      percentageAdded: 0.5
+      absoluteAdded: 10
+  - characterClass: 3
+    healthFormula:
+      startingValue: 10
+      percentageAdded: 0.25
+      absoluteAdded: 5
+  - characterClass: 4
+    healthFormula:
+      startingValue: 15
+      percentageAdded: 0.4
+      absoluteAdded: 10
