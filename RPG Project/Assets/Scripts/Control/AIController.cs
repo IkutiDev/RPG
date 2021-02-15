@@ -2,7 +2,7 @@
 using RPG.Core;
 using RPG.Movement;
 using Sirenix.OdinInspector;
-using System;
+using RPG.Resources;
 using UnityEditor;
 using UnityEngine;
 namespace RPG.Control
