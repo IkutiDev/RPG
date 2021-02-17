@@ -10,6 +10,7 @@ namespace RPG.Resources
         private bool isDead=false;
         private Animator animator;
         private ActionScheduler actionScheduler;
+        private BaseStats baseStats;
         public bool IsDead()
         {
             return isDead;
@@ -18,10 +19,11 @@ namespace RPG.Resources
         {
             animator = GetComponent<Animator>();
             actionScheduler = GetComponent<ActionScheduler>();
+            baseStats = GetComponent<BaseStats>();
         }
         private void Start()
         {
-            healthPoints = GetComponent<BaseStats>().GetHealth();
+            healthPoints = baseStats.GetHealth();
         }
         public void TakeDamage(float damage)
         {
@@ -31,6 +33,10 @@ namespace RPG.Resources
             {
                 Die();
             }
+        }
+        public float GetPercentage()
+        {
+            return healthPoints / baseStats.GetHealth() * 100f;
         }
         private void Die()
         {
