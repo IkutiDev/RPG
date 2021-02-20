@@ -25,14 +25,21 @@ namespace RPG.Resources
         {
             healthPoints = baseStats.GetHealth();
         }
-        public void TakeDamage(float damage)
+        public void TakeDamage(GameObject insigator,float damage)
         {
             if (isDead) return;
             healthPoints = Mathf.Max(healthPoints - damage, 0f);
             if (healthPoints == 0f)
             {
+                AwardExperience(insigator);
                 Die();
             }
+        }
+        private void AwardExperience(GameObject instigator)
+        {
+            Experience experience = instigator.GetComponent<Experience>();
+            if (experience == null) return;
+            experience.GainExperience(baseStats.GetExperience());
         }
         public float GetPercentage()
         {
