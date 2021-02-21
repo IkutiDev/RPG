@@ -13,23 +13,15 @@ MonoBehaviour:
   m_Name: Progression
   m_EditorClassIdentifier: 
   characterClasses:
-  - characterClass: 1
-    healthFormula:
-      startingValue: 200
-      percentageAdded: 0.5
-      absoluteAdded: 30
-  - characterClass: 2
-    healthFormula:
-      startingValue: 20
-      percentageAdded: 0.5
-      absoluteAdded: 10
-  - characterClass: 3
-    healthFormula:
-      startingValue: 10
-      percentageAdded: 0.25
-      absoluteAdded: 5
-  - characterClass: 4
-    healthFormula:
-      startingValue: 15
-      percentageAdded: 0.4
-      absoluteAdded: 10
+  - characterClass: 0
+    stats:
+    - stat: 0
+      formula:
+        startingValue: 100
+        percentageAdded: 0
+        absoluteAdded: 10
+    - stat: 1
+      formula:
+        startingValue: 100
+        percentageAdded: 0
+        absoluteAdded: 10
