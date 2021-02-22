@@ -14,14 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterClasses:
   - characterClass: 0
+    stats: []
+  - characterClass: 1
     stats:
     - stat: 0
       formula:
-        startingValue: 100
-        percentageAdded: 0
+        startingValue: 200
+        percentageAdded: 0.2
+        absoluteAdded: 20
+  - characterClass: 2
+    stats:
+    - stat: 0
+      formula:
+        startingValue: 40
+        percentageAdded: 0.1
         absoluteAdded: 10
     - stat: 1
       formula:
-        startingValue: 100
+        startingValue: 10
         percentageAdded: 0
         absoluteAdded: 10
+  - characterClass: 4
+    stats:
+    - stat: 0
+      formula:
+        startingValue: 20
+        percentageAdded: 0.05
+        absoluteAdded: 5
+    - stat: 1
+      formula:
+        startingValue: 15
+        percentageAdded: 0
+        absoluteAdded: 15
