@@ -7,13 +7,12 @@ namespace RPG.Resources
 {
     public class Experience : MonoBehaviour, ISaveable
     {
-        [SerializeField] private float experiencePoints = 0;
+        public float experiencePoints { get; private set; } = 0;
 
         public void GainExperience(float experience)
         {
             experiencePoints += experience;
         }
-
         public object CaptureState()
         {
             return experiencePoints;

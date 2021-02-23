@@ -8,14 +8,16 @@ namespace RPG.Combat
     public class EnemyHealthDisplay : MonoBehaviour
     {
         Fighter fighter;
+        Text healthText;
         private void Awake()
         {
             fighter = GameObject.FindGameObjectWithTag("Player").GetComponent<Fighter>();
+            healthText = GetComponent<Text>();
         }
         private void Update()
         {
-            if (fighter.GetTarget() != null) GetComponent<Text>().text = string.Format("{0:0.0}%", fighter.GetTarget().GetPercentage());
-            else GetComponent<Text>().text = "N/A";
+            if (fighter.GetTarget() != null) healthText.text = string.Format("{0:0.0}%", fighter.GetTarget().GetPercentage());
+            else healthText.text = "N/A";
         }
 
     }

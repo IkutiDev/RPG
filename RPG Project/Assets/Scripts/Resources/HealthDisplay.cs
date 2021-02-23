@@ -7,13 +7,15 @@ namespace RPG.Resources
     public class HealthDisplay : MonoBehaviour
     {
         Health health;
+        private Text healthText;
         private void Awake()
         {
             health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+            healthText = GetComponent<Text>();
         }
         private void Update()
         {
-            GetComponent<Text>().text = string.Format("{0:0.0}%",health.GetPercentage());
+            healthText.text = string.Format("{0:0.0}%",health.GetPercentage());
         }
 
     }
