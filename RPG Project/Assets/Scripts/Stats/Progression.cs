@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Stats
@@ -7,18 +8,37 @@ namespace RPG.Stats
     public class Progression : ScriptableObject
     {
         [SerializeField] ProgressionCharacterClass[] characterClasses = null;
+        Dictionary<CharacterClass, Dictionary<Stat,ProgressionStatFormula>> lookupTable = null;
         public float GetStat(Stat stat,CharacterClass characterClass, int level)
         {
-            foreach (ProgressionCharacterClass progressionCharacterClass in characterClasses)
+            BuildLookup();
+
+            //foreach (ProgressionCharacterClass progressionCharacterClass in characterClasses)
+            //{
+            //    if (progressionCharacterClass.characterClass != characterClass) continue;
+            //    foreach (var progressionStat in progressionCharacterClass.stats)
+            //    {
+            //        if (progressionStat.stat != stat) continue;
+            //        return progressionStat.formula.Calculate(level);
+            //    }
+            //}
+            return lookupTable[characterClass][stat].Calculate(level);
+        }
+        void BuildLookup()
+        {
+            if (lookupTable != null) return;
+            lookupTable = new Dictionary<CharacterClass, Dictionary<Stat, ProgressionStatFormula>>();
+            foreach(ProgressionCharacterClass progressionCharacterClass in characterClasses)
             {
-                if (progressionCharacterClass.characterClass != characterClass) continue;
-                foreach (var progressionStat in progressionCharacterClass.stats)
+                var statTable = new Dictionary<Stat, ProgressionStatFormula>();
+                foreach (ProgressionStat progressionStat in progressionCharacterClass.stats)
                 {
-                    if (progressionStat.stat != stat) continue;
-                    return progressionStat.formula.Calculate(level);
+                    statTable.Add(progressionStat.stat, progressionStat.formula);
+                    
                 }
+                lookupTable.Add(progressionCharacterClass.characterClass,statTable);
             }
-            return 0f;
+
         }
         [Serializable]
         class ProgressionCharacterClass
