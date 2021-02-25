@@ -7,22 +7,17 @@ namespace RPG.Stats
     [CreateAssetMenu(fileName = "Progression", menuName = "Stats/New Progression", order = 0)]
     public class Progression : ScriptableObject
     {
+        [SerializeField] private int maxPlayerLevel = 60;
         [SerializeField] ProgressionCharacterClass[] characterClasses = null;
         Dictionary<CharacterClass, Dictionary<Stat,ProgressionStatFormula>> lookupTable = null;
         public float GetStat(Stat stat,CharacterClass characterClass, int level)
         {
             BuildLookup();
-
-            //foreach (ProgressionCharacterClass progressionCharacterClass in characterClasses)
-            //{
-            //    if (progressionCharacterClass.characterClass != characterClass) continue;
-            //    foreach (var progressionStat in progressionCharacterClass.stats)
-            //    {
-            //        if (progressionStat.stat != stat) continue;
-            //        return progressionStat.formula.Calculate(level);
-            //    }
-            //}
             return lookupTable[characterClass][stat].Calculate(level);
+        }
+        public int GetMaxPlayerLevel()
+        {
+            return maxPlayerLevel;
         }
         void BuildLookup()
         {

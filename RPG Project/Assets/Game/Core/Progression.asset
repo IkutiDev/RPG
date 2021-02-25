@@ -46,3 +46,15 @@ MonoBehaviour:
         startingValue: 15
         percentageAdded: 0
         absoluteAdded: 15
+  - characterClass: 6
+    stats:
+    - stat: 0
+      formula:
+        startingValue: 100
+        percentageAdded: 0
+        absoluteAdded: 0
+    - stat: 1
+      formula:
+        startingValue: 100
+        percentageAdded: 0
+        absoluteAdded: 0

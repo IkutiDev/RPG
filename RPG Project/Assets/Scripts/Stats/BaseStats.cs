@@ -12,7 +12,22 @@ namespace RPG.Stats
         [SerializeField] private Progression progression = null;
         public float GetStat(Stat stat)
         {
-            return progression.GetStat(stat,characterClass, startingLevel);
+            return progression.GetStat(stat, characterClass, GetLevel());
+        }
+        public int GetLevel()
+        {
+            Experience experience = GetComponent<Experience>();
+            if (experience) return startingLevel;
+            float currentEXP = experience.experiencePoints;
+            for (int level = 1; level < progression.GetMaxPlayerLevel(); level++)
+            {
+                float EXPToLevelUp = progression.GetStat(Stat.ExperienceToLevelUp, characterClass, level);
+                if(EXPToLevelUp> currentEXP)
+                {
+                    return level;
+                }
+            }
+            return progression.GetMaxPlayerLevel();
         }
     }
 }
