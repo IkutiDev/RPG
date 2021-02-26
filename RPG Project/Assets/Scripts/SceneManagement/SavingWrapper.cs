@@ -25,6 +25,21 @@ namespace RPG.SceneManagement
             yield return savingSystem.LoadLastScene(defaultSaveFile);
             yield return fader.FadeIn(fadeInTime);
         }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                Save();
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                Load();
+            }
+            if (Input.GetKeyDown(KeyCode.Delete))
+            {
+                Delete();
+            }
+        }
 
         public void Save()
         {
@@ -34,6 +49,10 @@ namespace RPG.SceneManagement
         public void Load()
         {
             savingSystem.Load(defaultSaveFile);
+        }
+        public void Delete()
+        {
+            savingSystem.Delete(defaultSaveFile);
         }
     }
 }

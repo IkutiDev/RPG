@@ -6,7 +6,7 @@ namespace RPG.Resources
 {
     public class Health : MonoBehaviour,ISaveable
     {
-        [SerializeField] private float healthPoints = 100f;
+        private float healthPoints = -1f;
         private bool isDead=false;
         private Animator animator;
         private ActionScheduler actionScheduler;
@@ -23,7 +23,10 @@ namespace RPG.Resources
         }
         private void Start()
         {
-            healthPoints = baseStats.GetStat(Stat.Health);
+            if (healthPoints < 0)
+            {
+                healthPoints = baseStats.GetStat(Stat.Health);
+            }
         }
         public void TakeDamage(GameObject insigator,float damage)
         {
