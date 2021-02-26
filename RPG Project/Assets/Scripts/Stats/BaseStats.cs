@@ -17,7 +17,7 @@ namespace RPG.Stats
         public int GetLevel()
         {
             Experience experience = GetComponent<Experience>();
-            if (experience) return startingLevel;
+            if (experience==null) return startingLevel;
             float currentEXP = experience.experiencePoints;
             for (int level = 1; level < progression.GetMaxPlayerLevel(); level++)
             {

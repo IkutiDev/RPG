@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed7fb0b110047249bc80153b1f1a6ba, type: 3}
   m_Name: Progression
   m_EditorClassIdentifier: 
+  maxPlayerLevel: 60
   characterClasses:
   - characterClass: 0
     stats: []
@@ -22,6 +23,11 @@ MonoBehaviour:
         startingValue: 200
         percentageAdded: 0.2
         absoluteAdded: 20
+    - stat: 2
+      formula:
+        startingValue: 10
+        percentageAdded: 0
+        absoluteAdded: 10
   - characterClass: 2
     stats:
     - stat: 0
