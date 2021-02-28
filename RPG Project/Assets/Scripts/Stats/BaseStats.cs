@@ -12,10 +12,13 @@ namespace RPG.Stats
         [SerializeField] private Progression progression = null;
         private int currentLevel = 0;
         private Experience experience;
+        private void Awake()
+        {
+            experience = GetComponent<Experience>();
+        }
         private void Start()
         {
             currentLevel = GetLevel();
-            experience = GetComponent<Experience>();
             if (experience != null)
             {
                 experience.onExperiencedGained += UpdateLevel;
@@ -24,7 +27,10 @@ namespace RPG.Stats
         }
         private void OnDestroy()
         {
-            experience.onExperiencedGained -= UpdateLevel;
+            if (experience != null)
+            {
+                experience.onExperiencedGained -= UpdateLevel;
+            }
         }
         private void UpdateLevel()
         {
@@ -32,7 +38,6 @@ namespace RPG.Stats
             if (newLevel > currentLevel)
             {
                 currentLevel = newLevel;
-                print("Level up!");
             }
         }
         public float GetStat(Stat stat)
